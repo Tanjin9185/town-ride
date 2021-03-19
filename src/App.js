@@ -9,9 +9,13 @@ import Blog from './Components/Blog/Blog';
 import Contact from './Components/Contact/Contact';
 import Home from './Components/Home/Home';
 import Destination from './Components/Destination/Destination';
-import Login from './Components/Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import { Nav, Navbar } from 'react-bootstrap';
+import Header from './Components/Header/Header';
+import NotFound from './Components/NotFound/NotFound';
+import FinalDestination from './Components/FinalDestination/FinalDestination';
+import SignIn from './Components/SignIn/SignIn';
 
 
 export const UserContext = createContext();
@@ -23,27 +27,7 @@ function App(props) {
     <UserContext.Provider value ={[loggedinUser, setLoggedinUser]}>
   <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/home">Home</Link>
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/destination">Destination</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
-        </nav>
-
-        
+      <Header></Header> 
         <Switch>
           <Route path="/blog">
             <Blog />
@@ -51,14 +35,26 @@ function App(props) {
           <Route path="/contact">
             <Contact />
           </Route>
-          <PrivateRoute path="/destination">
+          <PrivateRoute path="/destination/:id">
             <Destination />
           </PrivateRoute >
-          <Route path="/login">
+          <PrivateRoute path="/finalDestination">
+            <FinalDestination />
+          </PrivateRoute >
+          {/* <Route path="/login">
             <Login />
+          </Route> */}
+          <Route path="/signin">
+            <SignIn />
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route  path="*">
+            <NotFound />
           </Route>
         </Switch>
       </div>

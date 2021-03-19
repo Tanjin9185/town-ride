@@ -6,11 +6,12 @@ import rideData from '../Data/Data'
 import { useEffect } from 'react';
 import './Home.css'
 
+
 const Home = () => {
     const [ride, setRide] = useState([]);
     useEffect(() => {
         setRide(rideData);
-        console.log(rideData);
+        // console.log(rideData);
     }, [])
     return (
         <section className="banner row">
@@ -21,7 +22,9 @@ const Home = () => {
                         ride={ride}></Rides>
                     )
                 }
+               
             </div>
+           
         </section>
     );
 };
