@@ -11,13 +11,14 @@ const Rides = (props) => {
     const { name, quantity, img, price, id } = props.ride;
 
     return (
-        <div key={id} className="col-lg-3 col-md-6 col-sm-12" style={{height:'768px'}}>
-            <Card className="singleCard" onClick={() => handleBook(id)} style={{ width: '18rem', height: '200px', textAlign: 'center',borderRadius:"15px",marginLeft:'10%',marginTop:'300px'}}>
-                <Card.Img variant="top" style={{ width: '150px',marginTop:"10px",marginLeft:"60px"}} src={img} />
-                <Card.Body>
-                    <Card.Title > {name} </Card.Title>
-                </Card.Body>
-            </Card>
+        <div key={id} className="col-md-3" style={{height:'768px'}}>
+            <div className="singleCard py-5" onClick={() => handleBook(id)} style={{ textAlign: 'center',borderRadius:"15px",marginTop:'300px'}}>
+                {/* <Card.Img variant="top" style={{ width: '150px',marginTop:"10px",marginLeft:"60px"}} src={img} /> */}
+                <img className="img-fluid w-50" src={img} alt=""/>
+                <div>
+                    <h5 className="mt-2"> {name} </h5>
+                </div>
+            </div>
         </div>
     );
 };

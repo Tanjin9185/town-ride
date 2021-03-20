@@ -29,6 +29,12 @@ function App(props) {
       <div>
       <Header></Header> 
         <Switch>
+        <Route path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route path="/blog">
             <Blog />
           </Route>
@@ -47,12 +53,7 @@ function App(props) {
           <Route path="/signin">
             <SignIn />
           </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
+          
           <Route  path="*">
             <NotFound />
           </Route>
