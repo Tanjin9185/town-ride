@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from '../../images/logo.png';
+
 const Header = () => {
     const [loggedinUser, setLoggedinUser] =useContext(UserContext);
 
@@ -9,19 +11,19 @@ console.log(loggedinUser);
 
     return (
         <>
-
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+{/* bg="dark" variant="dark" */}
+            <Navbar collapseOnSelect expand="lg" >
                 <Navbar.Brand ><img style={{ height: "60px" }} src={logo} alt="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                     </Nav>
                     <Nav>
-                        <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="/destination">Destination</Nav.Link>
-                        <Nav.Link href="/blog">Blog</Nav.Link>
-                        <Nav.Link href="/contact">Contact</Nav.Link>
-                        <Nav.Link href="/signin">
+                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/signin">Destination</Nav.Link>
+                        <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+                        <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                        <Nav.Link as={Link} to="/signin">
         
         
                         {loggedinUser.displayName ? loggedinUser.displayName :"Login"}

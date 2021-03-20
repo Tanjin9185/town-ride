@@ -3,7 +3,8 @@ import rideData1 from '../Data/Data';
 import map from '../../images/Map.png';
 import './FinalDestination.css';
 import { useParams } from 'react-router';
-
+// import { Map } from 'google-maps-react';
+import Map from '../Map/Map';
 
 
 const FinalDestination = () => {
@@ -36,6 +37,7 @@ const FinalDestination = () => {
             
         </div>
         <div>
+          {/* <Map></Map> */}
             <img style={{height: '600px', marginLeft:"200px" , marginTop:"50px"}}src={map} alt=""/>
         </div>
     </div>

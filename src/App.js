@@ -29,12 +29,13 @@ function App(props) {
       <div>
       <Header></Header> 
         <Switch>
+        <Route exact path="/">
+            <Home />
+          </Route>
         <Route path="/home">
             <Home />
           </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
+        
           <Route path="/blog">
             <Blog />
           </Route>

@@ -21,7 +21,10 @@ const Destination = (props) => {
                         <Form.Label>Pick To</Form.Label>
                         <Form.Control type="text" name="journyEnd" placeholder="Mongla" required/>
                     </Form.Group>
-                    
+                    <Form.Group controlId="selectDate">
+                    <Form.Label>Select Date</Form.Label>
+                            <Form.Control type="date" name="dob" placeholder="Set your Date" />
+                    </Form.Group>
                     
                 </Form>
                 

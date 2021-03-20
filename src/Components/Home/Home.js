@@ -5,6 +5,7 @@ import Rides from '../Rides/Rides'
 import rideData from '../Data/Data'
 import { useEffect } from 'react';
 import './Home.css'
+import Header from '../Header/Header';
 
 
 const Home = () => {
@@ -14,7 +15,10 @@ const Home = () => {
         // console.log(rideData);
     }, [])
     return (
+        <div>
+        
         <section className="banner row">
+            {/* <Header></Header> */}
             <div className="ride-section" >
                 {
                     ride.map(ride => <Rides
@@ -26,6 +30,7 @@ const Home = () => {
             </div>
            
         </section>
+        </div>
     );
 };
 
