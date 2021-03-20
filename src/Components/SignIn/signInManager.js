@@ -26,7 +26,7 @@ export const googleSignIn = () =>
             const { displayName, email, photoURL } = res.user;
             const signedInUser = {
                 isSignIn: true,
-                userName: displayName,
+                displayName,
                 email,
                 imgSrc: photoURL,
                 success: true
@@ -51,9 +51,10 @@ export const gitHubSignIn = () =>
             const { displayName, email, photoURL } = res.user;
             const signedInUser = {
                 isSignIn: true,
-                userName: displayName,
+                displayName,
                 email,
-                imgSrc: photoURL
+                imgSrc: photoURL,
+                success: true
             };
             return signedInUser;
 
@@ -75,6 +76,7 @@ export const createUserWithEmailAndPassword = (name, email, password) =>
             newUserInfo.success = true;
             updateUserInfo(name);
             return newUserInfo;
+            console.log(newUserInfo);
         })
         .catch((error) =>
         {

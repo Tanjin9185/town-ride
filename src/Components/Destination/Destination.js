@@ -6,8 +6,8 @@ import rideData from '../Data/Data';
 
 const Destination = (props) => {
     
-    
-    
+    const {id} = useParams();
+    const history = useHistory();
     return (
 
         <div className="d-flex">
@@ -15,20 +15,18 @@ const Destination = (props) => {
                 <Form>
                     <Form.Group controlId="formBasicStart">
                         <Form.Label>Pick Form</Form.Label>
-                        <Form.Control type="text" name="startForm" placeholder="Mirpur" />
+                        <Form.Control type="text" name="startForm" placeholder="Mirpur" required/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEnd">
                         <Form.Label>Pick To</Form.Label>
-                        <Form.Control type="text" name="journyEnd" placeholder="Mongla" />
+                        <Form.Control type="text" name="journyEnd" placeholder="Mongla" required/>
                     </Form.Group>
-                    {/* <Button onClick={handleSearchButtonClick()} variant="primary" type="submit">
-                        Search
-                    </Button> */}
+                    
                     
                 </Form>
-                <Link to="/finalDestination">
-                    <button  className="">Search</button>
-                    </Link>
+                
+                    <button onClick={()=>history.push(`/finalDestination/${id}`)} className="">Search</button>
+                    
             </div>
             <div>
                 <img style={{height: '600px', marginLeft:"200px" , marginTop:"50px"}}src={map} alt=""/>

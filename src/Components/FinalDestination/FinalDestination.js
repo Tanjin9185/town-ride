@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import rideData from '../Data/Data';
+import rideData1 from '../Data/Data';
 import map from '../../images/Map.png';
 import './FinalDestination.css';
+import { useParams } from 'react-router';
+
 
 
 const FinalDestination = () => {
-    const [ride, setRide] = useState([])
-    useEffect(() => {
-        setRide(rideData[0])
-        // console.log("p", rideData);
-    }, [])
-    // console.log("pp", ride[0].name);
-    const { name, quantity, img, price} = ride;
+
+  
+  const {id} = useParams();
+  
+    
+
+     const vehicle = rideData1.find(ride => ride.id == id);
+     console.log(vehicle);
+     const { name, quantity, img, price} = vehicle;
     return (
         <div className="d-flex">
             

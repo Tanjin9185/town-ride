@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './SignIn.css';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
-import { createUserWithEmailAndPassword, SignInUserWithEmailAndPassword, gitHubSignIn, googleSignIn, initializeSignIn }  from './signInManager';
+import { createUserWithEmailAndPassword, SignInUserWithEmailAndPassword, gitHubSignIn, googleSignIn, initializeSignIn, updateUserInfo }  from './signInManager';
 
 const SignIn = () =>
 {
@@ -54,12 +54,13 @@ const SignIn = () =>
 
     const handleSubmit = (event) =>
     {
-        if (newUser && user.email && user.password)
+        if (newUser && user.name && user.email && user.password)
         {
             createUserWithEmailAndPassword(user.name, user.email, user.password)
                 .then(res =>
                 {
                     handleResponse(res, true);
+                    updateUserInfo(user.name);
                 })
         }
         if (!newUser && user.email && user.password)
