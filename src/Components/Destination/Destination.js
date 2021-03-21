@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import map from '../../images/Map.png';
 import rideData from '../Data/Data';
+import Map from '../Map/Map';
 
 const Destination = (props) => {
     
@@ -31,9 +32,8 @@ const Destination = (props) => {
                     <button onClick={()=>history.push(`/finalDestination/${id}`)} className="">Search</button>
                     
             </div>
-            <div>
-                <img style={{height: '600px', marginLeft:"200px" , marginTop:"50px"}}src={map} alt=""/>
-            </div>
+            
+            <Map></Map>
         </div>
     );
 };   

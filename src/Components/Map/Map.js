@@ -1,34 +1,31 @@
-// import React from 'react'
-// import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-// // import {API_KEY} from './config';
-// const containerStyle = {
-//   width: '400px',
-//   height: '400px',
- 
-// };
+import React, { Component } from 'react';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 
-// const center = {
-//   lat: 23.71573,
-//   lng: 90.38395
-// };
+const mapStyles = {
+    marginTop: '150px',
+    marginLeft: '90px',
+    width: '50%',
+    height: '50%'
+};
 
-// function Map() {
-//   return (
-//     <LoadScript
-//       googleMapsApiKey="YOUR_API_KEY"
-//     >
-//       <GoogleMap
-//         mapContainerStyle={containerStyle}
-//         center={center}
-//         zoom={10}
-//       >
-//         <Marker      
-//       position={center}
-//     />
-    
-//       </GoogleMap>
-//     </LoadScript>
-//   )
-// }
+export class MapContainer extends Component {
+  render() {
+    return (
+      <Map
+        google={this.props.google}
+        zoom={14}
+        style={mapStyles}
+        initialCenter={
+          {
+            lat: -1.2884,
+            lng: 36.8233
+          }
+        }
+      />
+    );
+  }
+}
 
-// export default React.memo(Map)
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyDC3i_vfTdYhvxhJqprtR4erae0QJyOCtc'
+})(MapContainer);

@@ -37,8 +37,8 @@ const FinalDestination = () => {
             
         </div>
         <div>
-          {/* <Map></Map> */}
-            <img style={{height: '600px', marginLeft:"200px" , marginTop:"50px"}}src={map} alt=""/>
+          <Map></Map>
+            
         </div>
     </div>
     );
