@@ -1,4 +1,4 @@
-Project Title : City Ride Live link : https://town-ride.web.app/
+Project Title : Town Ride Live link : https://town-ride.web.app/
 
 A web app where people can hire vehicles.
 
